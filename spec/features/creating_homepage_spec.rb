@@ -7,6 +7,6 @@ RSpec.feature "Creating Home Page" do
     expect(page).to have_link("Home")
     expect(page).to have_link("Athletes")
     expect(page).to have_content("Workout Lounge")
-    expect(page).to have_content("Show workouts")
+    expect(page).to have_content("Show off your workouts")
   end
 end
