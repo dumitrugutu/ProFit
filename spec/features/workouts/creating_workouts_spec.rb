@@ -10,7 +10,7 @@ RSpec.feature "Creating Workout" do
   scenario "with valid imput" do
     visit "/"
 
-    click_link "My Lounge"
+    click_link "My Workouts"
     click_link "New Workout"
     expect(page).to have_link("Back")
 
