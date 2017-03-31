@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root to: "dashboards#index"
-  
   devise_for :users
+
+  root to: "dashboards#index"
+
+  resources :users do
+    resources :workouts
+  end
 end
