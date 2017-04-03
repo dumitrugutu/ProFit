@@ -22,4 +22,13 @@ RSpec.feature "Listing Workout" do
     expect(page).to have_content(@workout2.workout_type)
     expect(page).to have_content(@workout2.date)
   end
+
+  scenario "shows no workouts if none created" do
+    @joe.workouts.delete_all
+
+    visit "/"
+
+    click_link "My Workouts"
+    expect(page).to have_content("No Workouts to show")
+  end
 end
