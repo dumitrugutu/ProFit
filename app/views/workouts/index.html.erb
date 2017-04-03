@@ -1,3 +1,39 @@
 <div class="col-md-8 col-xs-12">
+  <% unless @workouts.empty? %>
+    <h1>Past Workouts</h1>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Duration (min)</th>
+          <th>Workout details</th>
+          <th>Activity date</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @workouts.each do |workout| %>
+          <tr>
+            <td><%= workout.duration %></td>
+            <td><%= truncate(workout.workout_details, length: 100) %></td>
+            <td><%= workout.activity_date %></td>
+            <td><%= link_to "Show", [current_user, workout] %></td>
+            <td><%= link_to "Edit", [:edit, current_user, workout] %></td>
+            <td><%= link_to "Delete", [current_user, workout], method: :delete,
+            data: { confirm: "Are you sure?"} %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+
+    <br>
+    <% else %>
+    <div class="alert alert-danger message-font text-center" role="alert">
+      No Workouts to show
+    </div>
+    <br>
+  <% end %>
+
   <%= link_to "New Workout", new_user_workout_path(current_user), class: "btn btn-success link" %>
 </div>
