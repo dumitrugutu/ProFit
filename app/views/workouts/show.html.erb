@@ -1,0 +1,34 @@
+<div class="col-xs-12 col-md-10 col-md-offset-1">
+  <div>
+    <h2 class="show-header">Showing <%= "#{@workout.user.full_name}'s workout details'" %></h2>
+  </div>
+  <div class="col-xs-12 col-md-10 well member">
+    <div class="col-xs-4">
+      <strong>Duration (min)</strong>
+    </div>
+    <div class="col-xs-8 text-right">
+      <%= @workout.duration %>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-10 well member">
+    <div class="col-xs-4">
+      <strong>Workout details:</strong>
+    </div>
+    <div class="col-xs-8 text-right">
+      <%= truncate(@workout.workout_type, length: 50) %>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-10 well member">
+    <div class="col-xs-4">
+      <strong>Activity date:</strong>
+    </div>
+    <div class="col-xs-8 text-right">
+      <%= @workout.date %>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="col-xs-12 col-md-10 member">
+    <%= link_to "Back", user_workouts_path(current_user), class: "btn btn-success btn-md link", id: "back-btn" %>
+  </div>
+</div>
