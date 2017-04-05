@@ -39,6 +39,13 @@ class WorkoutsController < ApplicationController
     end
   end
 
+  def destroy
+    @workout = current_user.workouts.find(params[:id])
+    @wokout.destroy
+    flash[:notice] = "Workout has been deleted"
+    redirect_to user_workouts_path(current_user)
+  end
+
   private
     def workout_params
       params.require(:workout).permit(:duration, :workout_type, :date)
