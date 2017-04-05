@@ -20,7 +20,7 @@ RSpec.feature "Editing Workout" do
     find(link).click
 
     fill_in "Duration", with: 60
-    click_button "Update Workout"
+    click_button "Save Workout"
 
     expect(page).to have_content("Workout has been updated")
     expect(page).to have_content(60)
