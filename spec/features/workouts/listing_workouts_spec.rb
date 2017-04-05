@@ -5,7 +5,7 @@ RSpec.feature "Listing Workout" do
     @joe = User.create!(email: "joe@example.com", password: "password")
     login_as(@joe)
 
-    @workout1 = @joe.workouts.create!(duration: 55, workout_type: "25 pushups, 25 squats, 25 legs curls", date: Date.today )
+    @workout1 = @joe.workouts.create!(duration: 55, workout_type: "30 pushups, 30 squats, 30 legs curls", date: Date.today )
     @workout2 = @joe.workouts.create!(duration: 60, workout_type: "20 pushups, 20 squats, 20 legs curls", date: 1.days.ago )
     @workout3 = @joe.workouts.create!(duration: 65, workout_type: "25 pushups, 25 squats, 25 legs curls", date: 9.days.ago )
   end
