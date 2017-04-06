@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'registrations' }
-
   root to: "dashboards#index"
 
+  devise_for :users, controllers: { registrations: 'registrations' }
+  
   resources :users do
     resources :workouts
   end
