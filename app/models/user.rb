@@ -8,4 +8,8 @@ class User < ApplicationRecord
   validates :full_name, presence: true
 
   self.per_page = 10
+
+  def self.search_by_name(name)
+    where('full_name LIKE ?', "%#{name}%")
+  end
 end
