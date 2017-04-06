@@ -10,6 +10,7 @@ RSpec.feature "Searching Members" do
     visit "/"
 
     fill_in "search_name", with: "Doe"
+    click_button "Search"
 
     expect(page).to have_content(@joe.full_name)
     expect(current_path).to eq("/dashboards/search")
