@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   post "dashboards/search" => "dashboards#search", as: "search_dashboards"
+  
   # resources :dashboards, only: [:index] do
   #   collection do
   #     post :search, to: "dashboards#search"
