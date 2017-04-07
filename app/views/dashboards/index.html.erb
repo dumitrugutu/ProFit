@@ -1,19 +1,25 @@
-<div class="jumbotron">
-  <h1>Workout Lounge</h1>
-  <p>Show off your workouts</p>
-</div>
-
 <div class="row">
-  <div class="col-md-10">
-    <h2>Active Members</h2>
-    <%= will_paginate @members, renderer: BootstrapPagination::Rails, class: "pull-left paginate" %>
+  <div class="jumbotron">
+    <h1>Workout Lounge</h1>
+    <p>Show off your workouts</p>
   </div>
 </div>
 
 <div class="row">
+  <h2 class="text-center">Active Members</h2>
   <% @members.each do |member| %>
-    <div class="col-md-10 well member">
+    <div class="col-md-10 col-md-offset-1 well member">
       <%= member.full_name %>
+      <% if user_signed_in? %>
+        <%= link_to "Follow", friendships_path(friend_id: member.id),
+            method: :post, class: "btn btn-success pull-right" unless current_user.follows_or_same?(member) %>
+      <% end %>
     </div>
   <% end %>
+</div>
+
+<div class="row">
+  <div class="col-md-10">
+    <%= will_paginate @members, renderer: BootstrapPagination::Rails, class: "pull-left paginate" %>
+  </div>
 </div>
