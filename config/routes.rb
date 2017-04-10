@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   #   end
   # end
 
-  resources :friendships, only: [:show, :create, :destroy]
+  resources :friendships, only: [:show, :create]
+  delete "/friendships/:id" => "friendships#destroy", as: "destroy_friendships"
 
 end
