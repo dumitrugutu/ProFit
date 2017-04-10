@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $("#workout_date").datepicker({ dateFormat: "yy-mm-dd"});
 
-  var regex = /\/users\/\d+\/workouts$/i;
+  var regex = /\/users\/\d+\/workouts$|\/friendships\/d+$/i;
 
   if($(location).attr("pathname").match(regex)) {
     drawChart();
@@ -89,5 +89,5 @@ var drawChart = function() {
       .style("text-anchor", "middle")
       .style("font-size", "18px")
       .style("text-decoration", "underline")
-      .text("Workout durarion vs Workout date")
+      .text("Workout duration vs Workout date")
 };
