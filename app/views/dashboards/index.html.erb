@@ -9,10 +9,20 @@
   <h2 class="text-center">Active Members</h2>
   <% @members.each do |member| %>
     <div class="col-md-10 col-md-offset-1 well member">
-      <%= member.full_name %>
+      <% if current_user.follows_or_same?(member) %>
+        <%= link_to member.full_name, friendship_path(member) %>
+      <% else %>
+        <%= member.full_name %>
+      <% end %>
+
       <% if user_signed_in? %>
-        <%= link_to "Follow", friendships_path(friend_id: member.id),
-            method: :post, class: "btn btn-success pull-right" unless current_user.follows_or_same?(member) %>
+        <% unless current_user.follows_or_same?(member) %>
+          <%= link_to "Follow", friendships_path(friend_id: member.id),
+              method: :post, class: "btn btn-success pull-right" %>
+        <% else %>
+          <%= link_to "Unfollow", destroy_friendships_path(member),
+            method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-warning pull-right" %>
+        <% end %>
       <% end %>
     </div>
   <% end %>
