@@ -16,5 +16,6 @@ RSpec.feature "Unfollowing Members" do
 
     href = "/friendships?friend_id=#{@lisa.id}"
     expect(page).to have_link("Unfollow", href: href)
+    expect(page).to have_content("You have unfollowed #{@lisa.full_name} successfully")
   end
 end
