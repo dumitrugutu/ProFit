@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $("#workout_date").datepicker({ dateFormat: "yy-mm-dd"});
 
-  var regex = /\/users\/\d+\/workouts$/i;
+  var regex = /\/users\/\d+\/workouts$|\/friendships\/d+$/i;
 
   if($(location).attr("pathname").match(regex)) {
     drawChart();
