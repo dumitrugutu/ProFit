@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "Showing Friend Workout" do
+RSpec.feature "Showing Friend's Workout" do
   before do
     @joe = User.create!(full_name: "Joe Doe", email: "joe@example.com", password: "password")
     @lisa = User.create!(full_name: "Lisa Morris", email: "lisa@example.com", password: "password")
@@ -13,7 +13,7 @@ RSpec.feature "Showing Friend Workout" do
     @following = Friendship.create!(user_id: @joe.id, friend_id: @lisa.id)
   end
 
-  scenario "shows a friends's workout in the past 7 days" do
+  scenario "in the past 7 days" do
     visit "/"
 
     click_link @lisa.full_name

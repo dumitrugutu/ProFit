@@ -11,11 +11,11 @@ RSpec.feature "Unfollowing Members" do
   scenario "when signed in" do
     visit "/"
 
-    link = "a[href='/friendships?friend_id=#{@lisa.id}']"
-    find(link).click
+    follow_link = "a[href='/friendships?friend_id=#{@lisa.id}']"
+    find(follow_link).click
 
-    href = "/friendships?friend_id=#{@lisa.id}"
-    expect(page).to have_link("Unfollow", href: href)
+    unfollow_link = "/friendships/#{@lisa.id}"
+    expect(page).to have_link("Unfollow", href: unfollow_link)
     expect(page).to have_content("You have unfollowed #{@lisa.full_name} successfully")
   end
 end
