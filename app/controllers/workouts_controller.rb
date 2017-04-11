@@ -4,7 +4,7 @@ class WorkoutsController < ApplicationController
     set_current_room
     @message = Message.new
     @messages = current_room.messages if current_room
-    @followers = Friendship.where(friend_id: current_user.id)
+    @followers = current_user.friends
   end
 
   def show
