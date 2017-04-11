@@ -37,4 +37,17 @@
   <%= link_to "New Workout", new_user_workout_path(current_user), class: "btn btn-success link" %>
 
   <%= content_tag :div, "", id: "chart", data: { workouts: @workouts } %>
+
+  <div class="col-md-4 col-xs-12">
+    <div class="chat-window">
+      <header><%= current_room.name %></header>
+
+      <div id="form-box">
+        <%= form_for(@message) do |f| %>
+          <%= f.text_field :body, id: "message-field", class: "form-control pull-left" %>
+          <%= f.submit "Send", class: "btn btn-primary", id: "send-btn" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
