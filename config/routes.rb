@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   resources :friendships, only: [:show, :create]
   delete "/friendships/:id" => "friendships#destroy", as: "destroy_friendships"
 
+  resources :messages, only: [:create]
+
 end
