@@ -14,3 +14,33 @@
 #error_explanation h2 {
   font-size: 150%;
 }
+
+// Chat Box
+
+#chat-box {
+  min-height: 100px;
+}
+
+#message-field {
+  width: 96%;
+}
+
+.message-body {
+  margin-bottom: 2px;
+}
+
+#followers {
+  border-right: 1px solid #76c95b;
+}
+
+.followers {
+  margin-left: -15px;
+}
+
+#form-box {
+  margin-left: -15px;
+}
+
+#send-btn {
+  margin-right: -35px;
+}
