@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an application where you can track your friend's workout activity
+in the last 7 days. You can also keep in touch with them through direct messages.
 
-Things you may want to cover:
+This application was built in Ruby on Rails, following Behavioral Driven Development and Capybara
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Other technologies:
+* JavaScript
+* ActionCable
+* Bootstrap
+* jQuery UI
